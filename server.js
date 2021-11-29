@@ -5,6 +5,7 @@ const fileupload = require('express-fileupload');
 let initial_path = path.join(__dirname, "public");
 
 const app = express();
+const port = process.env.PORT || 3000;
 app.use(express.static(initial_path));
 app.use(fileupload());
 
@@ -52,6 +53,6 @@ app.use((req, res) => {
     res.json("404");
 })
 
-app.listen("3000", () => {
+app.listen(port, () => {
     console.log('listening......');
 })
