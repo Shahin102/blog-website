@@ -1,6 +1,7 @@
 const firebaseConfig = {
     apiKey: "AIzaSyDYCLgI0B9yfTUrCgh356SZsnuHdzXQKNc",
     authDomain: "blog-website-c5512.firebaseapp.com",
+    databaseURL: "https://blog-website-c5512-default-rtdb.firebaseio.com",
     projectId: "blog-website-c5512",
     storageBucket: "blog-website-c5512.appspot.com",
     messagingSenderId: "636561138990",
@@ -17,3 +18,7 @@ const logoutUser = () => {
     auth.signOut();
     location.reload();
 }
+
+const rootRef = firebase.database().ref();
+
+const commentsRef = rootRef.child('comments');

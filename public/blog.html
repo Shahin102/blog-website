@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="css/editor.css">
     <link rel="stylesheet" href="css/blog.css">
+    <link rel="stylesheet" href="css/comment.css">
 
 </head>
 
@@ -34,6 +35,29 @@
         </div>
     </div>
 
+    <!-- all comments -->
+    <div id="allcomments">
+        <h3>Comments</h3>
+        <!-- we will show post comments in the list below -->
+        <ul id="pastcomments"></ul>
+        <form id="newcomment">
+            <label for="tbName">First Name or Initials</label>
+            <br>
+            <input id="tbName" type="text" maxlength="20" required>
+            <br>
+            <label for="txComment">Your Comment / Question</label>
+            <br>
+            <textarea id="txComment" maxlength="4096" required style="width: 96%;"></textarea>
+            <br>
+            <input type="submit" id="btnSubmitComment" value="Submit Comment">
+        </form>
+    </div>
+
+    <!-- comment box -->
+    <section class="comments-section">
+
+    </section>
+
     <!-- blog section -->
     <section class="blogs-section">
         <!-- <div class="blog-card">
@@ -47,11 +71,12 @@
 
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
-
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
 
     <script src="js/firebase.js"></script>
     <script src="js/blog.js"></script>
+    <script src="js/comment.js"></script>
     <script src="js/home.js"></script>
 
     <script src="js/nav.js"></script>
