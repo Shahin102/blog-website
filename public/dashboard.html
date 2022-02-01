@@ -16,6 +16,15 @@
 
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
     <link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css">
+
+    <!-- Return to Top -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+
+    <!-- footer -->
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+    <link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css">
+
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 </head>
 
 <body>
@@ -41,6 +50,73 @@
     <section class="blogs__section">
 
     </section>
+
+
+    <!-- footer -->
+
+    <!-- aos animation to footer -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+        });
+    </script>
+
+    <footer class="footer__distributed" data-aos="fade-in" data-aos-id="super-duper">
+        <div class="footer__left">
+            <a href="/home">
+                <img class="footer__logo" src="img/logo.png" style="max-width: 10%; margin-top: 10px;">
+            </a>
+            <h3 class="about">About<span class="about__span">BlogCommunity</span></h3>
+
+            <p class="footer__links">
+                <a href="/">Home</a>
+                |
+                <a href="/editor">Editor</a>
+            </p>
+
+            <p class="footer__company--name">© 2022 Lorem ipsum dolor Sed Perspic Org.</p>
+        </div>
+
+        <div class="footer__center">
+            <div>
+                <i class="fa fa-map-marker"></i>
+                <p><span>309 - Lorem ipsum,
+                        Bldg. No. A - 1, Sector - 1</span>
+                    Lorem, Lorem ipsum - 400710</p>
+            </div>
+
+            <div>
+                <i class="fa fa-phone"></i>
+                <p>+88 22-2778Lorem</p>
+            </div>
+            <div>
+                <i class="fa fa-envelope"></i>
+                <p><a href="https://mail.google.com/" target="_blank">test@eipsum.com</a></p>
+            </div>
+        </div>
+        <div class="footer__right">
+            <p>
+                <span>About the community</span>
+                Lorem ipsum dolor sit amet consectetur adipiscing elit, Sed, Perspiciatis, Duis and
+                Voluptate.
+            </p>
+            <div class="footer__icons">
+                <a href="#"><i class="fa fa-facebook"></i></a>
+                <a href="#"><i class="fa fa-twitter"></i></a>
+                <a href="#"><i class="fa fa-instagram"></i></a>
+                <a href="#"><i class="fa fa-linkedin"></i></a>
+                <a href="#"><i class="fa fa-youtube"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Return to Top -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <section>
+        <button id="topBtn"><i class="fas fa-arrow-up"></i></button>
+    </section>
+
 
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
