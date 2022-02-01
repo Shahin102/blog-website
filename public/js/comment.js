@@ -1,21 +1,21 @@
-const commentSection = document.querySelector('.comments-section');
+const commentSection = document.querySelector('.comment__boxes');
 
 document.getElementById('btnSubmitComment').addEventListener('click', function () {
     // Replace line breaks in comment with br tags.
-    var newcomment = document.getElementById('txComment').value.replace(/\n/g, "<br>");
+    var newComment = document.getElementById('txComment').value.replace(/\n/g, "<br>");
     // Define a new, keyed, post.
     var newPostRef = commentsRef.push();
     // Fill the new keyed post with data
     newPostRef.set({
         name: document.getElementById('tbName').value.trim(),
-        comment: newcomment.trim(),
+        comment: newComment.trim(),
         frompage: location.pathname,
         when: firebase.database.ServerValue.TIMESTAMP
     });
 });
 
 function showpastcomments() {
-    var showat = document.getElementById('pastcomments');
+    var showat = document.getElementById('pastComments');
     // Get comments whose frompage equals this page's pathname
     var commentsRef = firebase.database().ref('comments/').orderByChild('frompage').equalTo(location.pathname);
     commentsRef.once('value', function (snapshot) {

@@ -4,7 +4,7 @@ const ui = new firebaseui.auth.AuthUI(auth);
 
 const login = document.querySelector('.login');
 
-const blogSection = document.querySelector('.blogs-section');
+const blogSection = document.querySelector('.blogs__section');
 
 auth.onAuthStateChanged((user) => {
     if (user) {
@@ -45,13 +45,15 @@ const getUserWrittenBlogs = () => {
 const createBlog = (blog) => {
     let data = blog.data();
     blogSection.innerHTML += `
-    <div class="blog-card">
-        <img src="${data.bannerImage}" class="blog-image" alt="">
-        <h1 class="blog-title">${data.title.substring(0, 100) + '...'}</h1>
-        <p class="blog-overview">${data.article.substring(0, 200) + '...'}</p>
-        <a href="/${blog.id}" class="btn dark">read</a>
-        <a href="/${blog.id}/editor" class="btn grey">edit</a>
-        <a href="#" onclick="deleteBlog('${blog.id}')" class="btn danger">delete</a>
+    <div class="blog__card">
+        <img src="${data.bannerImage}" class="blog__image" alt="">
+        <h2 class="blog__title">${data.title.substring(0, 60) + '...'}</h2>
+        <p class="blog__overview">${data.article.substring(0, 120) + '...'}</p>
+        <div class="buttons">
+            <a href="/${blog.id}" class="btn dark">read</a>
+            <a href="/${blog.id}/editor" class="btn grey">edit</a>
+            <a href="#" onclick="deleteBlog('${blog.id}')" class="btn danger">delete</a>
+        </div>
     </div>
     `;
 }

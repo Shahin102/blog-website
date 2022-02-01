@@ -2,12 +2,12 @@ const blogTitleField = document.querySelector('.title');
 const articleFeild = document.querySelector('.article');
 
 // banner
-const bannerImage = document.querySelector('#banner-upload');
+const bannerImage = document.querySelector('#banner__upload');
 const banner = document.querySelector(".banner");
 let bannerPath;
 
-const publishBtn = document.querySelector('.publish-btn');
-const uploadInput = document.querySelector('#image-upload');
+const publishBtn = document.querySelector('.publish__btn');
+const uploadInput = document.querySelector('#image__upload');
 
 bannerImage.addEventListener('change', () => {
     uploadImage(bannerImage, "banner");
@@ -20,29 +20,38 @@ uploadInput.addEventListener('change', () => {
 const uploadImage = (uploadFile, uploadType) => {
     const [file] = uploadFile.files;
     if (file && file.type.includes("image")) {
-        const formdata = new FormData();
-        formdata.append('image', file);
-
-        fetch('/upload', {
-            method: 'post',
-            body: formdata
-        }).then(res => res.json())
-            .then(data => {
+        var imageName = file.name;
+        var storageRef = firebase.storage().ref('images/' + imageName);
+        var uploadTask = storageRef.put(file);
+        uploadTask.on('state_changed', function (snapshot) {
+            //get task progress by following code
+            var progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+            console.log("upload is " + progress + " done");
+        }, function (error) {
+            //handle error here
+            console.log(error.message);
+        }, function () {
+            //handle successfull upload here..
+            uploadTask.snapshot.ref.getDownloadURL().then(function (downloadURL) {
+                //get your image download url here and upload it to databse
                 if (uploadType == "image") {
-                    addImage(data, file.name);
+                    // addImage(data, file.name);
+                    addImage(downloadURL);
                 } else {
-                    bannerPath = `${location.origin}/${data}`;
+                    bannerPath = `${downloadURL}`;
                     banner.style.backgroundImage = `url("${bannerPath}")`;
                 }
-            })
+            });
+        });
     } else {
         alert("upload Image only");
     }
 }
 
-const addImage = (imagepath, alt) => {
+const addImage = (imagepath) => {
     let curPos = articleFeild.selectionStart;
-    let textToInsert = `\r![${alt}](${imagepath})\r`;
+    // let textToInsert = `\r<img src="${imagepath}">\r`;
+    let textToInsert = `\r${imagepath}\r`;
     articleFeild.value = articleFeild.value.slice(0, curPos) + textToInsert + articleFeild.value.slice(curPos);
 }
 

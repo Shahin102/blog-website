@@ -1,8 +1,27 @@
-body{
-    background: #ececec;
+#login{
+    display: none;
 }
 
-.login{
+@media (max-width: 414px) {
+
+    #navbar.navbar {
+        width: 90%;
+    }
+
+    #dashboard.link__item {
+        display: none;
+    }
+
+    img {
+        margin-left: 10px;
+    }
+
+    #login {
+        display: none;
+    }
+}
+
+.login {
     position: fixed;
     top: 0;
     left: 0;
@@ -17,30 +36,57 @@ body{
 
 /* login hover effect */
 
-.firebaseui-idp-button:hover{
+.firebaseui-idp-button:hover {
     background: #000 !important;
 }
 
-.firebaseui-idp-button:hover .firebaseui-idp-text{
+.firebaseui-idp-button:hover .firebaseui-idp-text {
     color: #fff !important;
     transition: .5s;
 }
 
-.heading{
+.heading__dashboard {
     color: rgb(0, 0, 0, 0.5);
     font-size: 60px;
     text-align: center;
     position: relative;
     margin: 100px 0 20px;
+    text-transform: capitalize;
+    line-height: 60px;
 }
 
-.btn.grey{
+.btn.grey {
     background: #c5c5c5;
     color: #000;
     margin: 0 10px;
 }
 
-.btn.danger{
-    background: #f00;
+.btn.grey:hover {
+    background: #000000;
+    color: #ffff;
+}
+
+.btn.danger {
+    background: #f85d5d;
     color: #fff;
+}
+
+.btn.danger:hover {
+    background: #cc0000;
+    color: #000;
+}
+
+@media screen and (max-width: 730px) {
+    .buttons a {
+        margin-left: 0;
+        margin-bottom: 10px;
+        margin-top: 10px;
+        width: 100%;
+        float: left;
+        display: block;
+        text-align: center;
+    }
+    .btn.grey {
+        margin: 0;
+    }
 }

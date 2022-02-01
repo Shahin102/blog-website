@@ -12,35 +12,41 @@
     <link rel="stylesheet" href="css/blog.css">
     <link rel="stylesheet" href="css/comment.css">
 
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+    <link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css">
 </head>
 
 <body>
-
-    <nav class="navbar">
-        <img src="img/logo.png" class="logo" alt="">
-        <ul class="links-container">
-            <li class="link-item"><a href="/" class="link">home</a></li>
-            <li class="link-item"><a href="/editor" class="link">editor</a></li>
+    <nav class="navbar" id="navbar">
+        <a href="/home">
+            <img src="img/logo.png" class="logo" alt="">
+        </a>
+        <ul class="links__container">
+            <li class="link__item" id="home"><a href="/" class="link">home</a></li>
+            <li class="link__item"><a href="/editor" class="link">editor</a></li>
         </ul>
     </nav>
 
     <div class="banner"></div>
 
     <div class="blog">
-        <h1 class="title"></h1>
+        <h2 class="title"></h2>
         <p class="published"><span>published at - </span></p>
-        <a class="btn" id="edit-blog-btn" href="">edit blog</a>
+        <a class="btn" id="edit__blog--btn" href="">edit blog</a>
         <div class="article">
 
         </div>
     </div>
 
     <!-- all comments -->
-    <div id="allcomments">
+    <div id="allComments">
         <h3>Comments</h3>
-        <!-- we will show post comments in the list below -->
-        <ul id="pastcomments"></ul>
-        <form id="newcomment">
+
+        <!-- we will show post comments in a list -->
+        <ul id="pastComments">
+        </ul>
+
+        <form id="newComment">
             <label for="tbName">First Name or Initials</label>
             <br>
             <input id="tbName" type="text" maxlength="20" required>
@@ -53,20 +59,14 @@
         </form>
     </div>
 
-    <!-- comment box -->
-    <section class="comments-section">
+    <!-- comment boxes -->
+    <section class="comment__boxes">
 
     </section>
 
     <!-- blog section -->
-    <section class="blogs-section">
-        <!-- <div class="blog-card">
-                <img src="img/header.png" class="blog-image" alt="">
-                <h1 class="blog-title">Lorem ipsum dolor sit amet consectetur.</h1>
-                <p class="blog-overview">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt incidunt fugiat quos
-                    porro repellat harum. Adipisci tempora corporis rem cum.</p>
-                <a href="/" class="btn dark">read</a>
-            </div> -->
+    <section class="blogs__section">
+
     </section>
 
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>

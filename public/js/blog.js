@@ -24,7 +24,7 @@ const setupBlog = (data) => {
 
     try {
         if (data.author == auth.currentUser.email.split('@')[0]) {
-            let editBtn = document.getElementById('edit-blog-btn');
+            let editBtn = document.getElementById('edit__blog--btn');
             editBtn.style.display = 'inline';
             editBtn.href = `${blogId}/editor`;
         }
@@ -38,8 +38,7 @@ const setupBlog = (data) => {
 
 const addArticle = (ele, data) => {
     data = data.split("\n").filter(item => item.length);
-    // console.log(data);
-
+    console.log(data);
     data.forEach(item => {
         // check for heading
         if (item[0] == '#') {
@@ -53,19 +52,27 @@ const addArticle = (ele, data) => {
             ele.innerHTML += `<${tag}>${item.slice(hCount, item.length)}</${tag}>`
         }
         //checking for image format
-        else if (item[0] == "!" && item[1] == "[") {
-            let seperator;
+        else if (item[0] == "h" && item[8] == "f" && item[44] == "b" && item[49] == "w"
+            && item[57] == "c" && item[61] == "2" && item[63] == "a" && item[77] == "i" && item[78] == "m" && item[79] == "a" && item[80] == "g"
+            && item[81] == "e" && item[82] == "s") {
+            // console.log("done");
 
-            for (let i = 0; i <= item.length; i++) {
-                if (item[i] == "]" && item[i + 1] == "(" && item[item.length - 1] == ")") {
-                    seperator = i;
+            let imageName = [];
+            let j = 0;
+            for (let i = 86; i <= item.length; i++) {
+                if (item[i] != '?') {
+                    imageName[j] = item[i];
+                    j++;
                 }
+                else
+                    break;
             }
 
-            let alt = item.slice(2, seperator);
-            let src = item.slice(seperator + 2, item.length - 1);
+            let alt = imageName.join("");
+            // console.log(item);
+            // console.log(alt);
             ele.innerHTML += `
-            <img src="${src}" alt="${alt}" class="article-image">
+            <img src="${item}" alt="${alt}" class="article__image">
             `;
         }
 
