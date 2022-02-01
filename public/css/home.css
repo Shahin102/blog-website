@@ -356,6 +356,7 @@ input[type=text]:focus {
 .about {
 	color:  #ffffff;
 	font: normal 36px 'Cookie', cursive;
+    font-size: 1.5em;
 	margin: 0;
 }
 
