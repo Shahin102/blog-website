@@ -1,3 +1,7 @@
+html {
+    scroll-behavior: smooth;
+}
+
 .blog, .article {
     position: relative;
     height: fit-content;
