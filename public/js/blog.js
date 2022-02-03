@@ -57,22 +57,23 @@ const addArticle = (ele, data) => {
             && item[81] == "e" && item[82] == "s") {
             // console.log("done");
 
-            let imageName = [];
-            let j = 0;
-            for (let i = 86; i <= item.length; i++) {
-                if (item[i] != '?') {
-                    imageName[j] = item[i];
-                    j++;
-                }
-                else
-                    break;
-            }
+            // let imageName = [];
+            // let j = 0;
+            // for (let i = 86; i <= item.length; i++) {
+            //     if (item[i] != '?') {
+            //         imageName[j] = item[i];
+            //         j++;
+            //     }
+            //     else
+            //         break;
+            // }
 
-            let alt = imageName.join("");
+            // let alt = imageName.join("");
             // console.log(item);
             // console.log(alt);
+
             ele.innerHTML += `
-            <img src="${item}" alt="${alt}" class="article__image">
+            <img src="${item}" class="article__image">
             `;
         }
 
