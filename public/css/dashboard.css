@@ -59,6 +59,18 @@ html {
     line-height: 60px;
 }
 
+.instructions {
+    color: gray;
+    display: block;
+    box-sizing: border-box;
+    margin-left: 55px;
+    margin-right: 55px;
+    font-weight: bold;
+    word-break: break-word;
+    font-family: 'poppins', sans-serif;
+    font-size: 1.1em;
+}
+
 .btn.grey {
     background: #c5c5c5;
     color: #000;
@@ -80,7 +92,7 @@ html {
     color: #000;
 }
 
-@media screen and (max-width: 730px) {
+@media screen and (max-width: 750px) {
     .buttons a {
         margin-left: 0;
         margin-bottom: 10px;

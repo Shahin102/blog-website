@@ -17,10 +17,19 @@ uploadInput.addEventListener('change', () => {
     uploadImage(uploadInput, "image");
 })
 
+function getRandomString(length) {
+    var randomChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    var result = '';
+    for (var i = 0; i < length; i++) {
+        result += randomChars.charAt(Math.floor(Math.random() * randomChars.length));
+    }
+    return result;
+}
+
 const uploadImage = (uploadFile, uploadType) => {
     const [file] = uploadFile.files;
     if (file && file.type.includes("image")) {
-        var imageName = file.name;
+        var imageName = file.name + getRandomString(20);
         var storageRef = firebase.storage().ref('images/' + imageName);
         var uploadTask = storageRef.put(file);
         uploadTask.on('state_changed', function (snapshot) {
