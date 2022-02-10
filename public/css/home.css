@@ -320,7 +320,7 @@ input[type=text] {
 /* When the input field gets focus,
         change its width to 100% */
 input[type=text]:focus {
-    width: 75%;
+    width: 60%;
 }
 
 .searchBar__input:focus{

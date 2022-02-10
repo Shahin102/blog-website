@@ -1,3 +1,8 @@
+#### This project is inspired by --> ####
+##### YouTube: https://www.youtube.com/watch?v=AWHGQfzfHxI&list=PLqm86YkewF6RU_k6jymVX7EavJ1w9i4VW&ab_channel=ModernWeb #####
+##### GitHub: https://github.com/kunaal438/blogging-site #####
+
+
 # Running the Site Locally
 First fork the repo or clone it then open it with your code editor --> in your terminal run the command →
 
