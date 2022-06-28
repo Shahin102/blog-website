@@ -1,14 +1,14 @@
 const express = require('express');
 
 const path = require('path');
-const fileupload = require('express-fileupload');
+// const fileupload = require('express-fileupload');
 
 let initial__path = path.join(__dirname, "public");
 
 const app = express();
 const port = process.env.PORT || 3000;
 app.use(express.static(initial__path));
-app.use(fileupload());
+// app.use(fileupload());
 
 app.get('/', (req, res) => {
     res.sendFile(path.join(initial__path, "home.html"));
