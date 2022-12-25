@@ -4,7 +4,7 @@
   "description": "",
   "main": "server.js",
   "engines": {
-    "node": "14.0.0"
+    "node": "14.21.1"
   },
   "scripts": {
     "test": "node server.js"
